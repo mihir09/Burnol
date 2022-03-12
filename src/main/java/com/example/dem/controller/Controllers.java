@@ -67,7 +67,7 @@ public class Controllers {
 
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String getData(@RequestParam String text,@RequestParam String index){
-		ConnectionString connectionString = new ConnectionString("mongodb+srv://mj:mj1820@cluster0.ghega.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+		ConnectionString connectionString = new ConnectionString("mongodb+srv://mj:mj1820@cluster0.ghega.mongodb.net/wordindex1?retryWrites=true&w=majority");
 		MongoClientSettings settings = MongoClientSettings.builder()
 		        .applyConnectionString(connectionString)
 		        .serverApi(ServerApi.builder()
