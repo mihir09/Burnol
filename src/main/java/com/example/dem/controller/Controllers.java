@@ -67,7 +67,7 @@ public class Controllers {
 
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String getData(@RequestParam String text,@RequestParam String index){
-			MongoClient client = MongoClients.create("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false");
+			MongoClient client = MongoClients.create("mongodb+srv://mj:mj1820@cluster0.ghega.mongodb.net/test");
 			MongoDatabase database = client.getDatabase("wordindex1");
 			MongoCollection<Document> file = database.getCollection("hadoop");
 			MongoCollection<Document> data = database.getCollection("data");
