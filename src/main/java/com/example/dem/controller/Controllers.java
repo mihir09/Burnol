@@ -67,22 +67,23 @@ public class Controllers {
 
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String getData(@RequestParam String text,@RequestParam String index){
-		ConnectionString connectionString = new ConnectionString("mongodb+srv://mj:mj1820@cluster0.ghega.mongodb.net/wordindex1?retryWrites=true&w=majority");
-		MongoClientSettings settings = MongoClientSettings.builder()
-		        .applyConnectionString(connectionString)
-		        .serverApi(ServerApi.builder()
-		            .version(ServerApiVersion.V1)
-		            .build())
-		        .build();
-		MongoClient client = MongoClients.create(settings);	
-		//MongoClient client = MongoClients.create("mongodb+srv://mj:mj1820@cluster0.ghega.mongodb.net/wordindex1");
+//		ConnectionString connectionString = new ConnectionString("mongodb+srv://mj:mj1820@cluster0.ghega.mongodb.net/wordindex1?retryWrites=true&w=majority");
+//		MongoClientSettings settings = MongoClientSettings.builder()
+//		        .applyConnectionString(connectionString)
+//		        .serverApi(ServerApi.builder()
+//		            .version(ServerApiVersion.V1)
+//		            .build())
+//		        .build();
+//		MongoClient client = MongoClients.create(settings);	
+		System.setProperty("jdk.tls.trustNameService", "true");
+		MongoClient client = MongoClients.create("mongodb+srv://mj:mj1820@cluster0.ghega.mongodb.net/wordindex?authSource=admin&replicaSet=atlas-wqp5tn-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true");
 			MongoDatabase database = client.getDatabase("wordindex1");
 			MongoCollection<Document> file = database.getCollection("hadoop");
 			MongoCollection<Document> data = database.getCollection("data");
 			//System.out.println(repository.findByWord(text).Indexing);
 //		Document name = file.find(new Document("word",text)).first();
 //		System.out.println(name);
-//			System.out.println(text);
+			System.out.println(file);
 			System.out.println(index);
 //			if (index == "hadoop") {
 //				JSONArray array = maintfidf(text, file, data);
