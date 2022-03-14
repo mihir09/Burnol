@@ -54,7 +54,7 @@ public class Tfidf {
 //                 ) {
 //                System.out.println(z);
 //            }
-        double TotalDoc =3480;
+        double TotalDoc =2635;
         double doc_word=docl.length;
 
         //System.out.println(doc_word);
@@ -120,7 +120,6 @@ public class Tfidf {
 
         JSONArray array = new JSONArray();
         try {
-        	System.out.println(query);
             //MongoClient client = MongoClients.create("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false");
             //MongoDatabase database = client.getDatabase("wordindex");
 //            MongoCollection<Document> file = database.getCollection("hadoop");

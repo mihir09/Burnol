@@ -62,7 +62,7 @@ public class Lucene {
             // Store the index in memory:
             //Directory directory = new RAMDirectory();
             // To store an index on disk, use this instead:
-            Directory directory = FSDirectory.open(Paths.get("D:/tmp/test"));
+            Directory directory = FSDirectory.open(Paths.get("luceneindex_files"));
         /*
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
         IndexWriter indexWriter = new IndexWriter(directory, config);
