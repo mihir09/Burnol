@@ -52,7 +52,7 @@ public class Controllers {
 	@Autowired
 	private Repo repository;
 	MongoClient client = MongoClients.create("mongodb+srv://mj:mj1820@cluster0.ghega.mongodb.net/wordindex?retryWrites=true&w=majority");
-	MongoClient mclient = MongoClients.create("mongodb+srv://mj:mj1820@h.crpaa.mongodb.net/wordindex?retryWrites=true&w=majority");
+	MongoClient mclient = MongoClients.create("mongodb+srv://mj:mj1820@h.jqqnv.mongodb.net/wordindex?retryWrites=true&w=majority");
 		MongoDatabase database = client.getDatabase("wordindex");
 		MongoDatabase db = mclient.getDatabase("wordindex");
 		MongoCollection<Document> file = db.getCollection("hadoop");
